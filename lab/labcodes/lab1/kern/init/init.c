@@ -21,17 +21,14 @@ kern_init(void) {
     cons_init();                // init the console
 
     const char *message = "(THU.CST) os is loading ...";
-    cprintf("%s\n\n", message);
-
+    	const char *message2 = "Rewrite by Groupmore";
+    	cprintf("%s\n%s\n\n", message, message2);
+    
     print_kerninfo();
-
     grade_backtrace();
-
     pmm_init();                 // init physical memory management
-
     pic_init();                 // init interrupt controller
     idt_init();                 // init interrupt descriptor table
-
     clock_init();               // init clock interrupt
     intr_enable();              // enable irq interrupt
 
